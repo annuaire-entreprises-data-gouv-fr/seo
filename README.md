@@ -2,7 +2,7 @@
 
 Ce dépôt ne contient que les fichiers consacré aux actions SEO (génération de la sitemap et mapping entre les pages). 
 
-[![SEO](https://github.com/etalab/annuaire-entreprises-seo/actions/workflows/seo.yml/badge.svg)](https://github.com/etalab/annuaire-entreprises-seo/actions/workflows/seo.yml)
+[![SEO](https://github.com/annuaire-entreprises-data-gouv-fr/seo/actions/workflows/seo.yml/badge.svg)](https://github.com/annuaire-entreprises-data-gouv-fr/seo/actions/workflows/seo.yml)
 
 ## Dépôts liés 🏗
 
@@ -10,12 +10,12 @@ Ce dépôt fait partie d'un ensemble de dépôts qui constituent l'[Annuaire des
 
 | Description                         | Accès                                                                       |
 | ----------------------------------- | --------------------------------------------------------------------------- |
-| Le site Web                         | [par ici 👉](https://github.com/etalab/annuaire-entreprises-site)           |
-| Les actions SEO                     | [par ici 👉](https://github.com/etalab/annuaire-entreprises-seo)            |
-| L’API du Moteur de recherche        | [par ici 👉](https://github.com/etalab/annuaire-entreprises-search-api)     |
-| Pipeline ETL                        | [par ici 👉](https://github.com/etalab/annuaire-entreprises-search-infra)   |
-| Le proxy API du site                | [par ici 👉](https://github.com/etalab/annuaire-entreprises-api-proxy)      |
-| Tests de pertinence de la recherche | [par ici 👉](https://github.com/etalab/annuaire-entreprises-search-testing) |
+| Le site Web                         | [par ici 👉](https://github.com/annuaire-entreprises-data-gouv-fr/site)           |
+| Les actions SEO                     | [par ici 👉](https://github.com/annuaire-entreprises-data-gouv-fr/seo)            |
+| L’API du Moteur de recherche        | [par ici 👉](https://github.com/annuaire-entreprises-data-gouv-fr/search-api)     |
+| Pipeline ETL                        | [par ici 👉](https://github.com/annuaire-entreprises-data-gouv-fr/search-infra)   |
+| Le proxy API du site                | [par ici 👉](https://github.com/annuaire-entreprises-data-gouv-fr/api-proxy)      |
+| Tests de pertinence de la recherche | [par ici 👉](https://github.com/annuaire-entreprises-data-gouv-fr/search-testing) |
 
 ### Installation
 
