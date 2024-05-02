@@ -1,15 +1,15 @@
 <h1 align="center">
-  <img src="https://github.com/etalab/annuaire-entreprises-site/blob/main/public/images/annnuaire-entreprises.svg" width="400px" />
+  <img src="https://github.com/annuaire-entreprises-data-gouv-fr/site/blob/main/public/images/annnuaire-entreprises.svg" width="400px" />
 </h1>
 
-<a href="https://github.com/etalab/annuaire-entreprises-seo/blob/main/LICENSE"><img src="https://img.shields.io/github/license/etalab/annuaire-entreprises-seo.svg?color=green" alt="License Badge"></a>
-[![SEO](https://github.com/etalab/annuaire-entreprises-seo/actions/workflows/seo.yml/badge.svg)](https://github.com/etalab/annuaire-entreprises-seo/actions/workflows/seo.yml)
+<a href="https://github.com/annuaire-entreprises-data-gouv-fr/seo/blob/main/LICENSE"><img src="https://img.shields.io/github/license/annuaire-entreprises-data-gouv-fr/seo.svg?color=green" alt="License Badge"></a>
+[![SEO](https://github.com/annuaire-entreprises-data-gouv-fr/seo/actions/workflows/seo.yml/badge.svg)](https://github.com/annuaire-entreprises-data-gouv-fr/seo/actions/workflows/seo.yml)
 
-Bienvenue sur le dépôt SEO de [l’Annuaire des Entreprises](https://github.com/etalab/annuaire-entreprises-site).
+Bienvenue sur le dépôt SEO de [l’Annuaire des Entreprises](https://github.com/annuaire-entreprises-data-gouv-fr/site).
 
 ## Dépôts liés 🏗
 
-Ce dépôt fait partie [d'un ensemble de services qui constituent l'Annuaire des Entreprises](https://github.com/etalab/annuaire-entreprises-site?tab=readme-ov-file#dépôts-liés-).
+Ce dépôt fait partie [d'un ensemble de services qui constituent l'Annuaire des Entreprises](https://github.com/annuaire-entreprises-data-gouv-fr/site?tab=readme-ov-file#dépôts-liés-).
 
 ## But
 
