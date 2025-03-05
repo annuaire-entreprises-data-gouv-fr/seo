@@ -24,7 +24,12 @@ export const escapeString = (term = '') => {
   return removeSpecialChars(term).replaceAll(/[^a-zA-Z0-9]/g, '-');
 };
 
+export const departementsInconnus = 'departements-inconnus';
+
 export const getUrlFromDepartement = (dep: string) => {
+  if (dep === departementsInconnus) {
+    return dep;
+  }
   // departement label without special char
   const labelDep = escapeString(libelleFromDepartement(dep, false));
   return `${dep}-${labelDep.replaceAll(' ', '').toLocaleLowerCase()}`;
@@ -56,14 +61,13 @@ export const libelleFromDepartement = (
   codeDepartement: string,
   addCode = true
 ) => {
-  //@ts-ignore
   const label = departements[codeDepartement];
 
   if (label) {
     const code = addCode ? ` (${codeDepartement})` : '';
     return `${label}${code}`;
   }
-  return 'Département inconnu';
+  return 'Entreprises étrangères & départements inconnus';
 };
 
 export const libelleFromCodeNAFWithoutNomenclature = (
@@ -76,7 +80,6 @@ export const libelleFromCodeNAFWithoutNomenclature = (
     codesNAF1993,
     codesNAP,
   ]) {
-    //@ts-ignore
     const label = nomenclature[code];
     if (label) {
       return addCode && code ? `${label} (${code})` : label;

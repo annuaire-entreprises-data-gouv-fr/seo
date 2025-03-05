@@ -1,13 +1,15 @@
 import fs from 'fs';
 import {
-  getDepartementFromCodePostal,
-  getUrlFromDepartement,
-} from './utils/index';
-import {
   renderDepartementsPage,
   renderNafsPage,
   renderResultsPage,
 } from './page-tree-render/index';
+import { departements } from './utils/departements';
+import {
+  departementsInconnus,
+  getDepartementFromCodePostal,
+  getUrlFromDepartement,
+} from './utils/index';
 
 class PageTreeBuilder {
   private dico: { [dep: string]: { [naf: string]: string[] } };
@@ -23,7 +25,10 @@ class PageTreeBuilder {
   }
 
   add = (canonical: string, naf: string, codePostal: string) => {
-    const dep = getDepartementFromCodePostal(codePostal);
+    let dep = getDepartementFromCodePostal(codePostal);
+    if (!departements[dep]) {
+      dep = departementsInconnus;
+    }
 
     if (!naf || !dep) {
       this.ignoredUrl += 1;

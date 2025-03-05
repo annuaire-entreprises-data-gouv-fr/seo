@@ -99,6 +99,7 @@ export const departements = {
   '972': 'Martinique',
   '973': 'Guyane',
   '974': 'La Réunion',
+  '975': 'Saint-Pierre-et-Miquelon',
   '976': 'Mayotte',
   '977': 'Saint-Barthélemy',
   '978': 'Saint-Martin',
