@@ -45,8 +45,7 @@ jobs:
         uses: ./.github/actions/notify
         with:
           message: '🚨 ${{ github.event.repository.name }} : deploy SEO files to production failed'
-          hook: ${{ secrets.TCHAP_HOOK }}
-          id: ${{ secrets.TCHAP_ROOM_ID }}
+          hook: ${{ secrets.DEV_EVENT_HOOK }}
 
   notify-deploy-success:
     name: Notify successful deployment
@@ -59,5 +58,4 @@ jobs:
         uses: ./.github/actions/notify
         with:
           message: '✅ ${{ github.event.repository.name }} : successfully deploy SEO files to production'
-          hook: ${{ secrets.TCHAP_HOOK }}
-          id: ${{ secrets.TCHAP_ROOM_ID }}
+          hook: ${{ secrets.DEV_EVENT_HOOK }}
