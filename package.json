@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "ts-node ./src/index.ts",
-    "dev": "serve dist"
+    "dev": "serve dist",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "axios": "^1.15.0",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "lefthook": "^2.0.4"
+    "lefthook": "^2.0.4",
+    "@types/node": "^22.13.10"
   }
 }
