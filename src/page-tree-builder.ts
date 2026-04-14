@@ -26,7 +26,7 @@ class PageTreeBuilder {
 
   add = (canonical: string, naf: string, codePostal: string) => {
     let dep = getDepartementFromCodePostal(codePostal);
-    if (!departements[dep]) {
+    if (!dep || !departements[dep]) {
       dep = departementsInconnus;
     }
 
