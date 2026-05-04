@@ -1,14 +1,13 @@
 import * as fs from 'fs';
 import * as axios from 'axios';
 
-const SOURCE_URL =
-  'https://object.files.data.gouv.fr/opendata/ae/prod/sitemap.csv';
+import { BASE_SITEMAP_URL } from './constants';
 
 export const downloadAndSaveData = async () => {
   console.time('⏱ Download and save base SIREN');
 
   //@ts-ignore
-  const names = await axios.get(SOURCE_URL, { timeout: 120000 });
+  const names = await axios.get(BASE_SITEMAP_URL, { timeout: 120000 });
   const data = names.data;
   const filePath = `/tmp/sitemap-${new Date().getTime()}`;
   await fs.promises.writeFile(filePath, data, 'utf-8');
