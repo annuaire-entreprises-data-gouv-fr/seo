@@ -22,37 +22,22 @@ jobs:
           - environment: production-03
             host: SSH_HOST_PRODUCTION_03
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_PRIVATE_KEY" > ./deploy.key
-          sudo chmod 600 ./deploy.key
-          ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
-        shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{secrets.SSH_MACHINE_USER_PRIVATE_KEY}}
-          SSH_HOST: ${{ secrets[matrix.host] }}
-
-      - name: Deploy to production
-        run: ssh -v -i ./deploy.key www-data@$SSH_HOST '/opt/docker/app/sitemap/deploy.sh >> /var/log/cron_build_sitemap'
-        env:
-          SSH_HOST: ${{ secrets[matrix.host] }}
-
-      - name: Notify failure
-        if: failure()
-        uses: annuaire-entreprises-data-gouv-fr/github-actions/.github/actions/notify@v1.1
+      - uses: actions/checkout@v6
+      - name: Setup Wireguard
+        uses: annuaire-entreprises-data-gouv-fr/github-actions/.github/actions/wireguard-up@wireguard/v1
         with:
-          message: "🚨 Fichiers <strong>SEO</strong> non déployés sur <strong>${{ matrix.environment }}</strong> !"
+          wg-config-file: ${{ secrets.WG_CONFIG_FILE }}
+      - uses: annuaire-entreprises-data-gouv-fr/github-actions/.github/actions/deploy@v2.0
+        with:
+          app: "sitemap"
+          version: "main"
+          environment: "${{ matrix.environment }}"
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY_GITHUB_APP_DEPLOYER }}
+          ssh-host: ${{ secrets[matrix.host] }}
+          notify-on-failure: true
+          notify-on-success: true
           tchap-url: ${{ secrets.TCHAP_URL }}
           tchap-token: ${{ secrets.TCHAP_TOKEN }}
-          trigger-notification: true
-      - name: Notify success
-        if: success()
-        uses: annuaire-entreprises-data-gouv-fr/github-actions/.github/actions/notify@v1.1
-        with:
-          message: "✅ Fichiers <strong>SEO</strong> déployés sur <strong>${{ matrix.environment }}</strong>"
-          tchap-url: ${{ secrets.TCHAP_URL }}
-          tchap-token: ${{ secrets.TCHAP_TOKEN }}
-          trigger-notification: false
+      - name: Stop Wireguard
+        if: always()
+        uses: annuaire-entreprises-data-gouv-fr/github-actions/.github/actions/wireguard-down@wireguard/v1
