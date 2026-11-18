@@ -11,6 +11,9 @@ jobs:
   deploy-production:
     name: 'Generate SEO files'
     runs-on: ubuntu-latest
+    concurrency:
+      group: wg-needed
+      queue: max
 
     strategy:
       max-parallel: 1
